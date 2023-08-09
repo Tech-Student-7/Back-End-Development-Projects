@@ -1,0 +1,157 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2753
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red15\green112\blue1;\red255\green255\blue254;\red0\green0\blue0;
+\red0\green0\blue255;\red144\green1\blue18;\red19\green118\blue70;}
+{\*\expandedcolortbl;;\cssrgb\c0\c50196\c0;\cssrgb\c100000\c100000\c99608;\cssrgb\c0\c0\c0;
+\cssrgb\c0\c0\c100000;\cssrgb\c63922\c8235\c8235;\cssrgb\c3529\c52549\c34510;}
+\margl1440\margr1440\vieww13920\viewh15260\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Shell commands:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 # Activate virtual environment using pipenv \cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 pipenv shell\cb1 \
+\cb3 pipenv install\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 # Making migrations\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 python3 manage.py makemigrations\cb1 \
+\cb3 python3 manage.py migrate\cb1 \
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Models.py:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 from\cf0 \cb3 \strokec4  django.db \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  models\cb1 \
+\cf5 \cb3 \strokec5 from\cf0 \cb3 \strokec4  django.contrib.auth.models \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  User\cb1 \
+\
+\cf5 \cb3 \strokec5 class\cf0 \cb3 \strokec4  Rating(models.Model):\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 user = models.ForeignKey(User, on_delete=models.CASCADE)\cb1 \
+\cb3 menuitem_id =  models.SmallIntegerField()\cb1 \
+\cb3 rating = models.SmallIntegerField()\cb1 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Admin.py:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 from\cf0 \cb3 \strokec4  django.contrib \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  admin\cb1 \
+\cf5 \cb3 \strokec5 from\cf0 \cb3 \strokec4  .models \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  Rating\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 # Register your models here.\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 admin.site.register(Rating)\cb1 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 url.py:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 from\cf0 \cb3 \strokec4  django.urls \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  path\cb1 \
+\cf5 \cb3 \strokec5 from\cf0 \cb3 \strokec4  . \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  views\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 urlpatterns = [\cb1 \
+\cb3 path(\cf6 \cb3 \strokec6 'ratings'\cf0 \cb3 \strokec4 , views.RatingsView.as_view()),\cb1 \
+\cb3 ]\cb1 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 views.py:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 from\cf0 \cb3 \strokec4  rest_framework \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  generics\cb1 \
+\cf5 \cb3 \strokec5 from\cf0 \cb3 \strokec4  rest_framework.permissions \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  IsAuthenticated\cb1 \
+\cf5 \cb3 \strokec5 from\cf0 \cb3 \strokec4  .models \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  Rating\cb1 \
+\cf5 \cb3 \strokec5 from\cf0 \cb3 \strokec4  .serializers \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  RatingSerializer\cb1 \
+\
+\cf5 \cb3 \strokec5 class\cf0 \cb3 \strokec4  RatingsView(generics.ListCreateAPIView):\cb1 \
+\cb3 queryset = Rating.objects.\cf5 \cb3 \strokec5 all\cf0 \cb3 \strokec4 ()\cb1 \
+\cb3 serializer_class = RatingSerializer\cb1 \
+\
+\cf5 \cb3 \strokec5 def\cf0 \cb3 \strokec4  get_permissions(\cf5 \cb3 \strokec5 self\cf0 \cb3 \strokec4 ):\cb1 \
+\cb3     \cf5 \cb3 \strokec5 if\cf0 \cb3 \strokec4 (\cf5 \cb3 \strokec5 self\cf0 \cb3 \strokec4 .request.method==\cf6 \cb3 \strokec6 'GET'\cf0 \cb3 \strokec4 ):\cb1 \
+\cb3         \cf5 \cb3 \strokec5 return\cf0 \cb3 \strokec4  []\cb1 \
+\
+\cb3     \cf5 \cb3 \strokec5 return\cf0 \cb3 \strokec4  [IsAuthenticated()]\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 serializers.py:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 from\cf0 \cb3 \strokec4  rest_framework \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  serializers\cb1 \
+\cf5 \cb3 \strokec5 from\cf0 \cb3 \strokec4  .models \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  Rating\cb1 \
+\cf5 \cb3 \strokec5 from\cf0 \cb3 \strokec4  rest_framework.validators \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  UniqueTogetherValidator\cb1 \
+\cf5 \cb3 \strokec5 from\cf0 \cb3 \strokec4  django.contrib.auth.models \cf5 \cb3 \strokec5 import\cf0 \cb3 \strokec4  User\cb1 \
+\
+\cf5 \cb3 \strokec5 class\cf0 \cb3 \strokec4  RatingSerializer (serializers.ModelSerializer):\cb1 \
+\cb3 user = serializers.PrimaryKeyRelatedField(\cb1 \
+\cb3         queryset=User.objects.\cf5 \cb3 \strokec5 all\cf0 \cb3 \strokec4 (),\cb1 \
+\cb3         default=serializers.CurrentUserDefault()\cb1 \
+\cb3 )\cb1 \
+\
+\cf5 \cb3 \strokec5 class\cf0 \cb3 \strokec4  Meta:\cb1 \
+\cb3     model = Rating\cb1 \
+\cb3     fields = [\cf6 \cb3 \strokec6 'user'\cf0 \cb3 \strokec4 , \cf6 \cb3 \strokec6 'menuitem_id'\cf0 \cb3 \strokec4 , \cf6 \cb3 \strokec6 'rating'\cf0 \cb3 \strokec4 ]\cb1 \
+\
+\cb3 validators = [\cb1 \
+\cb3     UniqueTogetherValidator(\cb1 \
+\cb3         queryset=Rating.objects.\cf5 \cb3 \strokec5 all\cf0 \cb3 \strokec4 (),\cb1 \
+\cb3         fields=[\cf6 \cb3 \strokec6 'user'\cf0 \cb3 \strokec4 , \cf6 \cb3 \strokec6 'menuitem_id'\cf0 \cb3 \strokec4 ]\cb1 \
+\cb3     )\cb1 \
+\cb3 ]\cb1 \
+\
+\cb3 extra_kwargs = \{\cb1 \
+\cb3     \cf6 \cb3 \strokec6 'rating'\cf0 \cb3 \strokec4 : \{\cf6 \cb3 \strokec6 'min_value'\cf0 \cb3 \strokec4 : \cf7 \cb3 \strokec7 0\cf0 \cb3 \strokec4 , \cf6 \cb3 \strokec6 'max_value'\cf0 \cb3 \strokec4 :\cf7 \cb3 \strokec7 5\cf0 \cb3 \strokec4 \},\cb1 \
+\cb3 \}\cb1 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+settings.py:\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf0 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 REST_FRAMEWORK = \{\cb1 \
+\cf6 \cb3 \strokec6 'DEFAULT_AUTHENTICATION_CLASSES'\cf0 \cb3 \strokec4 : (\cb1 \
+\cb3     \cf6 \cb3 \strokec6 'rest_framework.authentication.TokenAuthentication'\cf0 \cb3 \strokec4 ,\cb1 \
+\cb3     \cf6 \cb3 \strokec6 'rest_framework.authentication.SessionAuthentication'\cf0 \cb3 \strokec4 ,\cb1 \
+\cb3 ),\cb1 \
+\cb3 \}\cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+}
