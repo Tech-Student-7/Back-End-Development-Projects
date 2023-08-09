@@ -1,0 +1,388 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue254;\red14\green110\blue109;
+\red24\green24\blue24;\red255\green255\blue255;\red0\green0\blue255;\red15\green112\blue1;\red19\green118\blue70;
+\red144\green1\blue18;\red42\green42\blue42;\red107\green0\blue1;\red251\green0\blue7;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c99608;\cssrgb\c0\c50196\c50196;
+\cssrgb\c12157\c12157\c12157;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c100000;\cssrgb\c0\c50196\c0;\cssrgb\c3529\c52549\c34510;
+\cssrgb\c63922\c8235\c8235;\cssrgb\c21961\c21961\c21961;\cssrgb\c50196\c0\c0;\cssrgb\c100000\c0\c0;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Making migrations
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf0 \cb3 \strokec2 python3 manage.py makemigrations\cb1 \
+\cb3 python3 manage.py migrate\cb1 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 Running the server
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf0 \cb3 \strokec2 python3 manage.py runserver\cb1 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 Creating a new super user in Django admin
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf0 \cb3 \strokec2 python3 manage.py createsuperuser\cb1 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf0 \strokec2 For directory called sample: Stepping inside the directory\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf4 \cb3 \strokec4 cd\cf0 \cb3 \strokec2  sample\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 Stepping out of the directory
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf4 \cb3 \strokec4 cd\cf0 \cb3 \strokec2  ..\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 Clear the shell terminal window
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf0 \cb3 \strokec2 clear\cb1 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 List contents of directory
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf4 \cb3 \strokec4 ls\cf0 \cb1 \strokec2 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf5 \cb6 \strokec5 Django files\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \cb1 \strokec2 models.py
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \cb3 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf7 \cb3 \strokec7 from\cf0 \cb3 \strokec2  django.db \cf7 \cb3 \strokec7 import\cf0 \cb3 \strokec2  models\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8 # Create your models here.\cf0 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb3 \strokec7 class\cf0 \cb3 \strokec2  Booking(models.Model):\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3    first_name = models.CharField(max_length=\cf9 \cb3 \strokec9 200\cf0 \cb3 \strokec2 )    \cb1 \
+\cb3    last_name = models.CharField(max_length=\cf9 \cb3 \strokec9 200\cf0 \cb3 \strokec2 )\cb1 \
+\cb3    guest_number = models.IntegerField()\cb1 \
+\cb3    comment = models.CharField(max_length=\cf9 \cb3 \strokec9 1000\cf0 \cb3 \strokec2 )\cb1 \
+\
+\cb3    \cf7 \cb3 \strokec7 def\cf0 \cb3 \strokec2  __str__(\cf7 \cb3 \strokec7 self\cf0 \cb3 \strokec2 ):\cb1 \
+\cb3       \cf7 \cb3 \strokec7 return\cf0 \cb3 \strokec2  \cf7 \cb3 \strokec7 self\cf0 \cb3 \strokec2 .first_name + \cf10 \cb3 \strokec10 ' '\cf0 \cb3 \strokec2  + \cf7 \cb3 \strokec7 self\cf0 \cb3 \strokec2 .last_name\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb3 \strokec7 class\cf0 \cb3 \strokec2  Menu(models.Model):\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3    name = models.CharField(max_length=\cf9 \cb3 \strokec9 200\cf0 \cb3 \strokec2 ) \cb1 \
+\cb3    price = models.IntegerField(null=\cf7 \cb3 \strokec7 False\cf0 \cb3 \strokec2 ) \cb1 \
+\cb3    \cb1 \
+\
+\cb3    \cf7 \cb3 \strokec7 def\cf0 \cb3 \strokec2  __str__(\cf7 \cb3 \strokec7 self\cf0 \cb3 \strokec2 ):\cb1 \
+\cb3       \cf7 \cb3 \strokec7 return\cf0 \cb3 \strokec2  \cf7 \cb3 \strokec7 self\cf0 \cb3 \strokec2 .name\cb1 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 admin.py - First update
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf7 \cb3 \strokec7 from\cf0 \cb3 \strokec2  django.contrib \cf7 \cb3 \strokec7 import\cf0 \cb3 \strokec2  admin\cb1 \
+\cf7 \cb3 \strokec7 from\cf0 \cb3 \strokec2  .models \cf7 \cb3 \strokec7 import\cf0 \cb3 \strokec2  Menu\cb1 \
+\cf7 \cb3 \strokec7 from\cf0 \cb3 \strokec2  .models \cf7 \cb3 \strokec7 import\cf0 \cb3 \strokec2  Booking\cb1 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8 # Register your models here.\cf0 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 admin.site.register(Menu)\cb1 \
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 views.py - First part: Creating view for Menu
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf8 \cb3 \strokec8 #Menu Function\cf0 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb3 \strokec7 def\cf0 \cb3 \strokec2  menu(request):\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3     menu_data = Menu.objects.\cf7 \cb3 \strokec7 all\cf0 \cb3 \strokec2 ()\cb1 \
+\cb3     main_data = \{\cf10 \cb3 \strokec10 "menu"\cf0 \cb3 \strokec2 : menu_data\}\cb1 \
+\cb3     \cf7 \cb3 \strokec7 return\cf0 \cb3 \strokec2  render(request, \cf10 \cb3 \strokec10 'menu.html'\cf0 \cb3 \strokec2 , \{\cf10 \cb3 \strokec10 "menu"\cf0 \cb3 \strokec2 : main_data\})\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \cb1 \strokec2 menu.html - First part: Creating template for Menu
+\f1\b0 \
+
+\f2 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf0 \cb3 \strokec2 \{% extends 'base.html' %\}\cb1 \
+\cb3 \{% load static %\}\cb1 \
+\cb3 \{% block content %\}\cb1 \
+\cf11 \cb3 \strokec11 <\cf12 \strokec12 h1\cf11 \strokec11 >\cf0 \cb3 \strokec2 Menu\cf11 \cb3 \strokec11 </\cf12 \strokec12 h1\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cf8 \cb3 \strokec8 <!--Begin col-->\cf0 \cb1 \strokec2 \
+\cf11 \cb3 \strokec11 <\cf12 \strokec12 div\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 class\cf11 \strokec11 =\cf7 \cb3 \strokec7 "column"\cf11 \cb3 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3     \{% for item in menu.menu %\}\cb1 \
+\cb3     \cf11 \cb3 \strokec11 <\cf12 \strokec12 p\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3         \{\{ item.name \}\}\cb1 \
+\cb3         \cf11 \cb3 \strokec11 <\cf12 \strokec12 span\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 class\cf11 \strokec11 =\cf7 \cb3 \strokec7 "menu-price"\cf11 \cb3 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3             $\{\{ item.price \}\}.00\cb1 \
+\cb3         \cf11 \cb3 \strokec11 </\cf12 \strokec12 span\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3     \cf11 \cb3 \strokec11 </\cf12 \strokec12 p\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3     \{% endfor %\}\cb1 \
+\cf11 \cb3 \strokec11 </\cf12 \strokec12 div\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cf8 \cb3 \strokec8 <!--End col-->\cf0 \cb1 \strokec2 \
+\cb3 \{% endblock %\}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 models.py - Second part: Menu item page
+\f1\b0 \
+
+\f2 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf7 \cb3 \strokec7 from\cf0 \cb3 \strokec2  django.db \cf7 \cb3 \strokec7 import\cf0 \cb3 \strokec2  models\cb1 \
+\
+\
+\cf8 \cb3 \strokec8 # Create your models here.\cf0 \cb1 \strokec2 \
+\cf7 \cb3 \strokec7 class\cf0 \cb3 \strokec2  Booking(models.Model):\cb1 \
+\cb3    first_name = models.CharField(max_length=\cf9 \cb3 \strokec9 200\cf0 \cb3 \strokec2 )    \cb1 \
+\cb3    last_name = models.CharField(max_length=\cf9 \cb3 \strokec9 200\cf0 \cb3 \strokec2 )\cb1 \
+\cb3    guest_number = models.IntegerField()\cb1 \
+\cb3    comment = models.CharField(max_length=\cf9 \cb3 \strokec9 1000\cf0 \cb3 \strokec2 )\cb1 \
+\
+\cb3    \cf7 \cb3 \strokec7 def\cf0 \cb3 \strokec2  __str__(\cf7 \cb3 \strokec7 self\cf0 \cb3 \strokec2 ):\cb1 \
+\cb3       \cf7 \cb3 \strokec7 return\cf0 \cb3 \strokec2  \cf7 \cb3 \strokec7 self\cf0 \cb3 \strokec2 .first_name + \cf10 \cb3 \strokec10 ' '\cf0 \cb3 \strokec2  + \cf7 \cb3 \strokec7 self\cf0 \cb3 \strokec2 .last_name\cb1 \
+\
+\
+\cf8 \cb3 \strokec8 # Add code to create Menu model\cf0 \cb1 \strokec2 \
+\cf7 \cb3 \strokec7 class\cf0 \cb3 \strokec2  Menu(models.Model):\cb1 \
+\cb3    name = models.CharField(max_length=\cf9 \cb3 \strokec9 200\cf0 \cb3 \strokec2 ) \cb1 \
+\cb3    price = models.IntegerField(null=\cf7 \cb3 \strokec7 False\cf0 \cb3 \strokec2 ) \cb1 \
+\cb3    menu_item_description = models.TextField(max_length=\cf9 \cb3 \strokec9 1000\cf0 \cb3 \strokec2 , default=\cf10 \cb3 \strokec10 ''\cf0 \cb3 \strokec2 ) \cb1 \
+\
+\cb3    \cf7 \cb3 \strokec7 def\cf0 \cb3 \strokec2  __str__(\cf7 \cb3 \strokec7 self\cf0 \cb3 \strokec2 ):\cb1 \
+\cb3       \cf7 \cb3 \strokec7 return\cf0 \cb3 \strokec2  \cf7 \cb3 \strokec7 self\cf0 \cb3 \strokec2 .name\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 urls.py - App level
+\f1\b0 \
+
+\f2 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf7 \cb3 \strokec7 from\cf0 \cb3 \strokec2  django.urls \cf7 \cb3 \strokec7 import\cf0 \cb3 \strokec2  path, re_path\cb1 \
+\cf7 \cb3 \strokec7 from\cf0 \cb3 \strokec2  . \cf7 \cb3 \strokec7 import\cf0 \cb3 \strokec2  views\cb1 \
+\cf7 \cb3 \strokec7 from\cf0 \cb3 \strokec2  django.conf \cf7 \cb3 \strokec7 import\cf0 \cb3 \strokec2  settings\cb1 \
+\cf7 \cb3 \strokec7 from\cf0 \cb3 \strokec2  django.conf.urls.static \cf7 \cb3 \strokec7 import\cf0 \cb3 \strokec2  static\cb1 \
+\
+\cb3 urlpatterns = [\cb1 \
+\cb3     path(\cf10 \cb3 \strokec10 ''\cf0 \cb3 \strokec2 , views.home, name=\cf10 \cb3 \strokec10 "home"\cf0 \cb3 \strokec2 ),\cb1 \
+\cb3     path(\cf10 \cb3 \strokec10 'about/'\cf0 \cb3 \strokec2 , views.about, name=\cf10 \cb3 \strokec10 "about"\cf0 \cb3 \strokec2 ),\cb1 \
+\cb3     path(\cf10 \cb3 \strokec10 'book/'\cf0 \cb3 \strokec2 , views.book, name=\cf10 \cb3 \strokec10 "book"\cf0 \cb3 \strokec2 ), \cb1 \
+\cb3     path(\cf10 \cb3 \strokec10 'menu/'\cf0 \cb3 \strokec2 , views.menu, name=\cf10 \cb3 \strokec10 "menu"\cf0 \cb3 \strokec2 ),\cb1 \
+\cb3     path(\cf10 \cb3 \strokec10 'menu_item/<int:pk>/'\cf0 \cb3 \strokec2 , views.display_menu_item, name=\cf10 \cb3 \strokec10 "menu_item"\cf0 \cb3 \strokec2 ),\cb1 \
+\cb3 ]\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 views.py - Second part: Creating view for Menu item
+\f1\b0 \
+
+\f2 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf0 \cb1 \strokec2 \
+\cf7 \cb3 \strokec7 def\cf0 \cb3 \strokec2  display_menu_item(request, pk=\cf7 \cb3 \strokec7 None\cf0 \cb3 \strokec2 ): \cb1 \
+\cb3     \cf7 \cb3 \strokec7 if\cf0 \cb3 \strokec2  pk: \cb1 \
+\cb3         menu_item = Menu.objects.get(pk=pk) \cb1 \
+\cb3     \cf7 \cb3 \strokec7 else\cf0 \cb3 \strokec2 : \cb1 \
+\cb3         menu_item = \cf10 \cb3 \strokec10 ""\cf0 \cb3 \strokec2  \cb1 \
+\cb3     \cf7 \cb3 \strokec7 return\cf0 \cb3 \strokec2  render(request, \cf10 \cb3 \strokec10 'menu_item.html'\cf0 \cb3 \strokec2 , \{\cf10 \cb3 \strokec10 "menu_item"\cf0 \cb3 \strokec2 : menu_item\}) \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 menu.html - Second part: Update template for Menu
+\f1\b0 \
+
+\f2 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf0 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 \{% extends 'base.html' %\}\cb1 \
+\cb3 \{% load static %\}\cb1 \
+\cb3 \{% block content %\}\cb1 \
+\cf11 \cb3 \strokec11 <\cf12 \strokec12 h1\cf11 \strokec11 >\cf0 \cb3 \strokec2 Menu\cf11 \cb3 \strokec11 </\cf12 \strokec12 h1\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cf8 \cb3 \strokec8 <!--Begin col-->\cf0 \cb1 \strokec2 \
+\cf11 \cb3 \strokec11 <\cf12 \strokec12 div\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 class\cf11 \strokec11 =\cf7 \cb3 \strokec7 "column"\cf11 \cb3 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3     \{% for item in menu.menu %\}\cb1 \
+\cb3     \cf11 \cb3 \strokec11 <\cf12 \strokec12 p\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3         \cf11 \cb3 \strokec11 <\cf12 \strokec12 a\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 href\cf11 \strokec11 =\cf7 \cb3 \strokec7 "\{% url 'menu_item' pk=item.pk %\}"\cf11 \cb3 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3             \{\{ item.name \}\}\cb1 \
+\cb3             \cf11 \cb3 \strokec11 </\cf12 \strokec12 a\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3         \cf11 \cb3 \strokec11 <\cf12 \strokec12 span\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 class\cf11 \strokec11 =\cf7 \cb3 \strokec7 "menu-price"\cf11 \cb3 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3             $\{\{ item.price \}\}.00\cb1 \
+\cb3         \cf11 \cb3 \strokec11 </\cf12 \strokec12 span\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3     \cf11 \cb3 \strokec11 </\cf12 \strokec12 p\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3     \{% endfor %\}\cb1 \
+\cf11 \cb3 \strokec11 </\cf12 \strokec12 div\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cf8 \cb3 \strokec8 <!--End col-->\cf0 \cb1 \strokec2 \
+\cb3 \{% endblock %\}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 menu_item.html - Second part: Creating view for menu item
+\f1\b0 \
+
+\f2 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf0 \cb3 \strokec2 \{% extends 'base.html' %\} \cb1 \
+\cb3 \{% load static %\} \cb1 \
+\cb3 \{% block content %\}\cb1 \
+\cf11 \cb3 \strokec11 <\cf12 \strokec12 section\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3    \cf11 \cb3 \strokec11 <\cf12 \strokec12 article\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3       \cf11 \cb3 \strokec11 <\cf12 \strokec12 h1\cf11 \strokec11 >\cf0 \cb3 \strokec2 Menu item\cf11 \cb3 \strokec11 </\cf12 \strokec12 h1\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3       \cf11 \cb3 \strokec11 <\cf12 \strokec12 span\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3          \cf11 \cb3 \strokec11 <\cf12 \strokec12 a\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 href\cf11 \strokec11 =\cf7 \cb3 \strokec7 "\{% url 'home' %\}"\cf11 \cb3 \strokec11 >\cf0 \cb3 \strokec2 Home\cf11 \cb3 \strokec11 </\cf12 \strokec12 a\cf11 \strokec11 >\cf0 \cb3 \strokec2  /\cb1 \
+\cb3          \cf11 \cb3 \strokec11 <\cf12 \strokec12 a\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 href\cf11 \strokec11 =\cf7 \cb3 \strokec7 "\{% url 'menu' %\}"\cf11 \cb3 \strokec11 >\cf0 \cb3 \strokec2 Menu\cf11 \cb3 \strokec11 </\cf12 \strokec12 a\cf11 \strokec11 >\cf0 \cb3 \strokec2 /\cb1 \
+\cb3          \{\{menu_item.name\}\}\cb1 \
+\cb3       \cf11 \cb3 \strokec11 </\cf12 \strokec12 span\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3       \cf8 \cb3 \strokec8 <!--Begin row-->\cf0 \cb1 \strokec2 \
+\cb3       \cf11 \cb3 \strokec11 <\cf12 \strokec12 div\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 class\cf11 \strokec11 =\cf7 \cb3 \strokec7 "row"\cf11 \cb3 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3          \cf8 \cb3 \strokec8 <!--Begin col-->\cf0 \cb1 \strokec2 \
+\cb3          \cf11 \cb3 \strokec11 <\cf12 \strokec12 div\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 class\cf11 \strokec11 =\cf7 \cb3 \strokec7 "column"\cf11 \cb3 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3             \cf11 \cb3 \strokec11 <\cf12 \strokec12 h2\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3                 \{\{ menu_item.name \}\}\cb1 \
+\cb3             \cf11 \cb3 \strokec11 </\cf12 \strokec12 h2\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3             \cf11 \cb3 \strokec11 <\cf12 \strokec12 p\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3                 \{\{ menu_item.menu_item_description \}\}\cb1 \
+\cb3             \cf11 \cb3 \strokec11 </\cf12 \strokec12 p\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3             \cf11 \cb3 \strokec11 <\cf12 \strokec12 p\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3                 Price: $\{\{ menu_item.price \}\}.00\cb1 \
+\cb3             \cf11 \cb3 \strokec11 </\cf12 \strokec12 p\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3          \cf11 \cb3 \strokec11 </\cf12 \strokec12 div\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3          \cf8 \cb3 \strokec8 <!--End col-->\cf0 \cb1 \strokec2 \
+\cb3          \cf8 \cb3 \strokec8 <!--Begin col-->\cf0 \cb1 \strokec2 \
+\cb3          \cf11 \cb3 \strokec11 <\cf12 \strokec12 div\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 class\cf11 \strokec11 =\cf7 \cb3 \strokec7 "column"\cf11 \cb3 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3             \cf11 \cb3 \strokec11 <\cf12 \strokec12 img\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 src\cf11 \strokec11 =\cf7 \cb3 \strokec7 "/restaurant/static/img/menu_items/\{\{menu_item.name\}\}.jpg"\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 alt\cf11 \strokec11 =\cf7 \cb3 \strokec7 "\{\{ menu_item.name\}\}"\cf0 \cb3 \strokec2  \cf11 \cb3 \strokec11 />\cf0 \cb1 \strokec2 \
+\cb3             /restaurant/static/img/\{\{menu_item.name\}\}.jpg\cb1 \
+\cb3         \cf11 \cb3 \strokec11 </\cf12 \strokec12 div\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3          \cf8 \cb3 \strokec8 <!--End col-->\cf0 \cb1 \strokec2 \
+\cb3       \cf11 \cb3 \strokec11 </\cf12 \strokec12 div\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3       \cf8 \cb3 \strokec8 <!--End row-->\cf0 \cb1 \strokec2 \
+\cb3    \cf11 \cb3 \strokec11 </\cf12 \strokec12 article\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cf11 \cb3 \strokec11 </\cf12 \strokec12 section\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3 \{% endblock %\}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 _footer.html
+\f1\b0 \
+
+\f2 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf0 \cb3 \strokec2 \{% load static %\}\cb1 \
+\cf11 \cb3 \strokec11 <\cf12 \strokec12 footer\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3   \cf11 \cb3 \strokec11 <\cf12 \strokec12 article\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3     \cf11 \cb3 \strokec11 <\cf12 \strokec12 img\cf0 \cb3 \strokec2  \cf13 \cb3 \strokec13 src\cf11 \strokec11 =\cf7 \cb3 \strokec7 "\{% static 'img/logo_footer.png' %\}"\cf0 \cb3 \strokec2  \cf11 \cb3 \strokec11 />\cf0 \cb1 \strokec2 \
+\cb3   \cf11 \cb3 \strokec11 </\cf12 \strokec12 article\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3   \cf11 \cb3 \strokec11 <\cf12 \strokec12 article\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3     \cf11 \cb3 \strokec11 <\cf12 \strokec12 p\cf11 \strokec11 >\cf0 \cb3 \strokec2 Copyright Little Lemon\cf11 \cb3 \strokec11 </\cf12 \strokec12 p\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cb3   \cf11 \cb3 \strokec11 </\cf12 \strokec12 article\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\cf11 \cb3 \strokec11 </\cf12 \strokec12 footer\cf11 \strokec11 >\cf0 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \strokec2 base.html - include footer
+\f1\b0 \
+
+\f2 \cb3 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf8 \cb3 \strokec8 <!--Footer content-->\cf0 \cb1 \strokec2 \
+\cb3     \{% include 'partials/_footer.html' %\} \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\
+}

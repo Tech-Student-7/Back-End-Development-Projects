@@ -1,0 +1,64 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue255;\red255\green255\blue254;\red0\green0\blue0;
+\red15\green112\blue1;\red19\green118\blue70;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c100000;\cssrgb\c100000\c100000\c99608;\cssrgb\c0\c0\c0;
+\cssrgb\c0\c50196\c0;\cssrgb\c3529\c52549\c34510;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 models.py\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 from\cf0 \strokec4  django.db \cf2 \strokec2 import\cf0 \strokec4  models\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 # Create your models here.\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 class\cf0 \strokec4  Employee(models.Model):\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3     first_name = models.CharField(max_length=\cf6 \strokec6 200\cf0 \strokec4 )\cb1 \
+\cb3     last_name = models.CharField(max_length=\cf6 \strokec6 200\cf0 \strokec4 )\cb1 \
+\cb3     role = models.CharField(max_length=\cf6 \strokec6 100\cf0 \strokec4 )\cb1 \
+\cb3     shift = models.IntegerField()\cb1 \
+\
+\cb3     \cf2 \strokec2 def\cf0 \strokec4  __str__(\cf2 \strokec2 self\cf0 \strokec4 ):\cb1 \
+\cb3         \cf2 \strokec2 return\cf0 \strokec4  \cf2 \strokec2 self\cf0 \strokec4 .first_name\cb1 \
+\
+\
+\
+admin.py\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 from\cf0 \strokec4  django.contrib \cf2 \strokec2 import\cf0 \strokec4  admin\cb1 \
+\cf2 \cb3 \strokec2 from\cf0 \strokec4  .models \cf2 \strokec2 import\cf0 \strokec4  Employee\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 # Register your models here.\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 admin.site.register(Employee)\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \
+\
+Commands for running migration:\
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 # Command to perform migrations\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 python3 manage.py makemigrations\cb1 \
+\cb3 python3 manage.py migrate\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 # Command to run server\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 python3 manage.py runserver\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 # Command to create a super user\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3 python3 manage.py createsuperuser\cb1 \
+}
